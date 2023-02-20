@@ -1,0 +1,71 @@
+{
+
+  "$schema": "http://json-schema.org/schema",
+  "globalDependencies": ["turbo-cache-key.json", "test/lib/**"],
+  "files": [
+    ""
+  ],
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "projects": [
+    "packages/discel", ""
+  ],
+  "pipeline": {
+    "build": {
+      "dependsOn": ["^build"],
+      "outputMode": "new-only",
+      "outputs": ["dist/**"]
+    },
+    "@discel/node-bridge#build": {
+      "dependsOn": ["^build"],
+      "outputMode": "new-only",
+      "outputs": ["helpers.js", "source-map-support.js"]
+    },
+    "@discel/gatsby-plugin-vercel-builder#build": {
+      "dependsOn": ["^build"],
+      "outputMode": "new-only",
+      "outputs": ["dist/**", "gatsby-node.js"]
+    },
+    "@discel/gatsby-plugin-vercel-analytics#build": {
+      "dependsOn": ["^build"],
+      "outputMode": "new-only",
+      "outputs": ["gatsby-browser.js", "web-vitals.js", "index.js"]
+    },
+    "@discel#build": {
+      "dependsOn": ["^build"],
+      "outputMode": "new-only",
+      "outputs": [
+        "dist/**",
+        "src/util/constants.ts",
+        "src/util/dev/templates/*.ts"
+      ]
+    },
+    "test-unit": {
+      "dependsOn": ["build"],
+      "outputMode": "new-only"
+    },
+    "test-dev": {
+      "dependsOn": ["build"],
+      "outputMode": "new-only"
+    },
+    "test-cli": {
+      "dependsOn": ["build"],
+      "outputMode": "new-only"
+    },
+    "test-e2e": {
+      "dependsOn": ["build"],
+      "outputMode": "new-only"
+    },
+    "test-next-local": {
+      "dependsOn": ["build"],
+      "outputMode": "new-only"
+    },
+    "test": {
+      "dependsOn": ["build"],
+      "outputMode": "new-only"
+    }
+  }
+}
+
