@@ -9,6 +9,7 @@ coverage.lcov
 *.swp
 *.bak
 *.tgz
+
 packages/cli/src/util/dev/templates/*.ts
 packages/cli/src/util/constants.ts
 packages/cli/test/**/yarn.lock
@@ -22,6 +23,7 @@ packages/cli/test/dev/fixtures/**/.vercel
 !packages/cli/test/fixtures/unit/commands/build/monorepo-detection/**/yarn.lock
 packages/cli/test/fixtures/integration
 test/lib/deployment/failed-page.txt
+
 .DS_Store
 .next
 /.env

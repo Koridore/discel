@@ -1,27 +1,27 @@
-# @vercel/client
+# @discel/client
 
-[![Join the community on GitHub Discussions](https://badgen.net/badge/join%20the%20discussion/on%20github/black?icon=github)](https://github.com/vercel/vercel/discussions)
+[![Join the community on GitHub Discussions](https://badgen.net/badge/join%20the%20discussion/on%20github/black?icon=github)](https://github.com/discel/discel/discussions)
 
-The official Node.js client for deploying to [Vercel](https://vercel.com).
+The official Node.js client for deploying to [Discel](https://discel.com).
 
 ## Usage
 
 Firstly, install the package:
 
 ```bash
-npm install @vercel/client
+npm install @discel/client
 ```
 
 Next, load it:
 
 ```js
-const { createDeployment } = require('@vercel/client');
+const { createDeployment } = require('@discel/client');
 ```
 
 Then call inside a `for...of` loop to follow the progress with the following arguments:
 
 - `<path>` - a directory path / file path / array of file paths (must be on the same level)
-- `<options>` - An object containing `token`, an optional `teamId` and any `vercel.json`-valid [fields](https://vercel.com/docs/api#endpoints/deployments/create-a-new-deployment)
+- `<options>` - An object containing `token`, an optional `teamId` and any `discel.json`-valid [fields](https://discel.com/docs/api#endpoints/deployments/create-a-new-deployment)
 
 ```js
 async function deploy() {
@@ -63,5 +63,5 @@ Full list of events:
 You can also get the events set programmatically:
 
 ```js
-import { EVENTS } from '@vercel/client';
+import { EVENTS } from '@discel/client';
 ```

@@ -10,9 +10,9 @@ This project is configured in a monorepo, where one repository contains multiple
 
 To get started, execute the following:
 
-```
-git clone https://github.com/vercel/vercel
-cd vercel
+```sh
+git clone https://github.com/discel/discel
+cd discel
 corepack enable
 pnpm install
 pnpm bootstrap
@@ -23,11 +23,11 @@ pnpm test-unit
 
 Make sure all the tests pass before making changes.
 
-### Running Vercel CLI Changes
+### Running Discel CLI Changes
 
 You can use `pnpm dev` from the `cli` package to invoke Vercel CLI with local changes:
 
-```
+```sh
 cd ./packages/cli
 pnpm dev <cli-commands...>
 ```
@@ -38,13 +38,13 @@ See [CLI Local Development](../packages/cli#local-development) for more details.
 
 Once you are done with your changes (we even suggest doing it along the way), make sure all the tests still pass by running:
 
-```
+```sh
 pnpm test-unit
 ```
 
 from the root of the project.
 
-If any test fails, make sure to fix it along with your changes. See [Interpreting test errors](#Interpreting-test-errors) for more information about how the tests are executed, especially the integration tests.
+If any test fails, make sure to fix it along with your changes. See [Interpreting test errors](#interpreting-test-errors) for more information about how the tests are executed, especially the integration tests.
 
 ## Pull Request Process
 
@@ -62,7 +62,7 @@ Unit tests are run locally with `jest` and execute quickly because they are test
 
 Integration tests create deployments to your Vercel account using the `test` project name. After each test is deployed, the `probes` key is used to check if the response is the expected value. If the value doesn't match, you'll see a message explaining the difference. If the deployment failed to build, you'll see a more generic message like the following:
 
-```
+```js
 [Error: Fetched page https://test-8ashcdlew.vercel.app/root.js does not contain hello Root!. Instead it contains An error occurred with this application.
 
     NO_STATUS_CODE_FRO Response headers:
@@ -77,11 +77,11 @@ Integration tests create deployments to your Vercel account using the `test` pro
       x-now-trace=iad1]
 ```
 
-In such cases, you can visit the URL of the failed deployment and append `/_logs` to see the build error. In the case above, that would be https://test-8ashcdlew.vercel.app/_logs
+In such cases, you can visit the URL of the failed deployment and append `/_logs` to see the build error. In the case above, that would be <https://test-8ashcdlew.vercel.app/_logs>
 
 The logs of this deployment will contain the actual error which may help you to understand what went wrong.
 
-### @vercel/nft
+### @discel/nft
 
 Some of the Builders use `@vercel/nft` to tree-shake files before deployment. If you suspect an error with this tree-shaking mechanism, you can create the following script in your project:
 
