@@ -1,6 +1,6 @@
 {
-  "name": "@vercel/python",
-  "version": "3.1.49",
+  "name": "@discel/python",
+  "version": "0.0.0",
   "main": "./dist/index.js",
   "license": "MIT",
   "homepage": "https://vercel.com/docs/runtimes#official-runtimes/python",
@@ -10,7 +10,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/vercel/vercel.git",
+    "url": "https://github.com/discel/discel.git",
     "directory": "packages/python"
   },
   "scripts": {

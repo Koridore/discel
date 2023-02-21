@@ -1,8 +1,12 @@
 {
   "name": "@discel/fs",
   "version": "0.0.0",
-  "description": "A drop-in replacement for fs, making various improvements.",
+  "description": "Discel FileSystem - A drop-in replacement for fs, making various improvements.",
   "main": "dist/fs.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "directories": {
     "bin": "./bin",
     "lib": "./lib",
@@ -11,7 +15,9 @@
     "test": "./test"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc",
+    "test": "jest --env node --verbose --runInBand --bail test/unit.*test.*",
+    "test-unit": "pnpm test"
   },
   "keywords": [
     "fs",
@@ -45,12 +51,28 @@
     "node": ">=0.4.0"
   },
   "devDependencies": {
-    "mkdirp": "^2.1.3",
+    "@types/glob": "7.2.0",
+    "@types/jest": "27.5.1",
+    "@types/js-yaml": "4.0.5",
+    "@types/minimatch": "3.0.5",
+    "@types/node": "14.18.33",
+    "@types/semver": "7.3.10",
+    "@vercel/build-utils": "6.3.0",
+	 "mkdirp": "^2.1.3",
     "rimraf": "^4.1.2",
     "tap": "^16.3.4",
     "typescript": "4.9.5"
   },
-  "dependencies": {},
+  "dependencies": {
+    "@vercel/error-utils": "1.0.8",
+    "@vercel/frameworks": "1.3.1",
+    "@vercel/routing-utils": "2.1.9",
+    "glob": "8.0.3",
+    "js-yaml": "4.1.0",
+    "json5": "2.2.2",
+    "minimatch": "3.0.4",
+    "semver": "6.1.1"
+  },
   "readme": "# graceful-fs\n\ngraceful-fs functions as a drop-in replacement for the fs module,\nmaking various improvements.\n\nThe improvements are meant to normalize behavior across different\nplatforms and environments, and to make filesystem access more\nresilient to errors.\n\n## Improvements over [fs module](http://api.nodejs.org/fs.html)\n\ngraceful-fs:\n\n* Queues up `open` and `readdir` calls, and retries them once\n  something closes if there is an EMFILE error from too many file\n  descriptors.\n* fixes `lchmod` for Node versions prior to 0.6.2.\n* implements `fs.lutimes` if possible. Otherwise it becomes a noop.\n* ignores `EINVAL` and `EPERM` errors in `chown`, `fchown` or\n  `lchown` if the user isn't root.\n* makes `lchmod` and `lchown` become noops, if not available.\n* retries reading a file if `read` results in EAGAIN error.\n\nOn Windows, it retries renaming a file for up to one second if `EACCESS`\nor `EPERM` error occurs, likely because antivirus software has locked\nthe directory.\n\n## USAGE\n\n```javascript\n// use just like fs\nvar fs = require('graceful-fs')\n\n// now go and do stuff with it...\nfs.readFileSync('some-file-or-whatever')\n```\n",
   "readmeFilename": "README.md",
   "_id": "@discel/fs@0.0.0",
