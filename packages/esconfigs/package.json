@@ -1,0 +1,31 @@
+{
+  "name": "@discel/esconfigs",
+  "version": "0.0.0",
+  "description": "Discel ESConfigs",
+  "private": true,
+  "main": "dist/index.js",
+  "files": [
+    "LICENSE"
+  ],
+  "scripts": {
+
+  },
+  "keywords": [
+    "discel",
+    "vercel",
+    "turbo",
+    "meta",
+    "web"
+  ],
+  "author": "Discel",
+  "license": "MIT",
+  "devDependencies": {
+	
+  },
+  "dependencies": {
+	
+  },
+  "engines": {
+  	"node": ">=16.9.0"
+  }
+}

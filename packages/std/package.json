@@ -1,0 +1,23 @@
+{
+  "name": "@discel/std",
+  "description": "Javascript Standard Library",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./dist/index.js",
+  "types": "./src/types/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/discel/discel.git"
+  },
+  "author": "@discel",
+  "contributors": ["@Discel"],
+  "directories": {
+    "lib": "lib",
+    "doc": "doc",
+    "bin": "bin",
+    "test": "test"
+  },
+  "engines": {
+    "node": "*"
+  }
+}

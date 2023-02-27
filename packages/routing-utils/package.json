@@ -1,7 +1,7 @@
 {
-  "name": "@vercel/routing-utils",
-  "version": "2.1.9",
-  "description": "Vercel routing utilities",
+  "name": "@discel/routing-utils",
+  "version": "0.0.0",
+  "description": "Discel routing utilities",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "files": [
