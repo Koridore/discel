@@ -1,0 +1,9 @@
+amd-test/
+browser-test/
+browserify-test/
+header-test/
+webpack-test/
+.npmignore
+.travis.yml
+build.js
+test.js

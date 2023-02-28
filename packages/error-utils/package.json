@@ -1,12 +1,12 @@
 {
-  "name": "@vercel/error-utils",
-  "version": "1.0.8",
-  "description": "A collection of error utilities for vercel/vercel",
+  "name": "@discel/error-utils",
+  "version": "0.0.0",
+  "description": "A collection of error utilities for discel/discel",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "repository": {
     "type": "git",
-    "url": "https://github.com/vercel/vercel.git",
+    "url": "https://github.com/discel/discel.git",
     "directory": "packages/error-utils"
   },
   "scripts": {

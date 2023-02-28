@@ -50,7 +50,7 @@
 		"split-on-first": "^3.0.0"
 	},
 	"devDependencies": {
-		"ava": "^5.1.0",
+		"ava": "^5.2.0",
 		"benchmark": "^2.1.4",
 		"deep-equal": "^2.1.0",
 		"fast-check": "^3.4.0",

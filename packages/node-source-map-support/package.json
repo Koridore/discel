@@ -1,0 +1,32 @@
+{
+  "name": "@discel/node-source-map-support",
+  "description": "Fixes stack traces for files with source maps",
+  "version": "0.0.0",
+  "main": "./dist/node-source-map-support.js",
+  "scripts": {
+    "build": "node build.js",
+    "serve-tests": "http-server -p 1336",
+    "prepublish": "npm run build",
+    "test": "mocha"
+  },
+  "dependencies": {
+    "buffer-from": "1.1.2",
+    "source-map": "0.7.4"
+  },
+  "devDependencies": {
+    "browserify": "^17.0.0",
+    "coffeescript": "^2.7.0",
+    "http-server": "^14.1.1",
+    "mocha": "^10.2.0",
+    "webpack": "^5.75.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/discel/discel.git",
+	  "directory": "packages/node-source-map-support"
+  },
+  "bugs": {
+    "url": "https://github.com/discel/discel/issues"
+  },
+  "license": "MIT"
+}

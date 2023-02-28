@@ -1,0 +1,83 @@
+{
+  "name": "@discel/uploader",
+  "version": "0.0.0",
+  "description": "Discel Report Uploader",
+  "private": true,
+  "bin": {
+    "codecov": "dist/bin/codecov.js"
+  },
+  "scripts": {
+    "lint": "eslint \"src/**/*.ts\"",
+    "test": "npm run lint && npm run build && jest --runInBand",
+    "test:e2e": "jest test/e2e/output.test.ts",
+    "build:clean": "rm -rf dist",
+    "build": "tsc  --build",
+    "build-linux": "pkg . --targets linuxstatic --output out/codecov-linux",
+    "build-macos": "pkg . --targets macos --output out/codecov-macos",
+    "build-alpine": "pkg . --targets node14-alpine-x64 --output out/codecov-alpine",
+    "build-windows": "pkg . --targets win --output out/codecov.exe",
+    "prepare": "husky install",
+    "type-check": "tsc --noEmit",
+    "type-check:watch": "npm run type-check -- --watch",
+    "release": "standard-version --sign"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/discel/discel.git",
+	  "directory": "../packages/uploader"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/codecov/uploader/issues"
+  },
+  "homepage": "https://github.com/codecov/uploader#readme",
+  "dependencies": {
+    "fast-glob": "3.2.12",
+    "js-yaml": "4.1.0",
+    "snake-case": "3.0.4",
+    "undici": "5.19.1",
+    "validator": "13.9.0",
+    "yargs": "17.6.2"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "17.1.2",
+    "@commitlint/config-conventional": "17.1.0",
+    "@types/jest": "27.5.2",
+    "@types/js-yaml": "4.0.5",
+    "@types/micromatch": "4.0.2",
+    "@types/mock-fs": "4.13.1",
+    "@types/node": "18.11.19",
+    "@types/validator": "13.7.7",
+    "@types/yargs": "17.0.13",
+    "@typescript-eslint/eslint-plugin": "5.38.1",
+    "@typescript-eslint/parser": "5.38.1",
+    "eslint": "8.24.0",
+    "eslint-config-prettier": "8.5.0",
+    "husky": "8.0.1",
+    "jest": "27.5.1",
+    "jest-spec-reporter": "1.0.19",
+    "lint-staged": "13.0.3",
+    "mock-fs": "5.1.4",
+    "pkg": "5.6.0",
+    "prettier": "2.7.1",
+    "standard-version": "9.5.0",
+    "testdouble": "3.16.6",
+    "testdouble-jest": "2.0.0",
+    "ts-jest": "27.1.5",
+    "typescript": "4.8.4"
+  },
+  "lint-staged": {
+    "**/*.js": [
+      "prettier --write",
+      "eslint --fix"
+    ],
+    "**/*.{json,yml,yaml,html}": [
+      "prettier --write"
+    ]
+  },
+  "volta": {
+    "node": "18.14.0"
+  }
+}

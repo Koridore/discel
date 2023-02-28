@@ -1,7 +1,7 @@
 {
-  "name": "@discel/fs",
+  "name": "@discel/fs-detectors",
   "version": "0.0.0",
-  "description": "Discel FileSystem - A drop-in replacement for fs, making various improvements.",
+  "description": "Discel FileSystem Detectors - A drop-in replacement for fs, making various improvements.",
   "main": "dist/fs.js",
   "types": "./dist/index.d.ts",
   "files": [

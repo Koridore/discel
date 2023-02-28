@@ -1,6 +1,6 @@
 {
   "name": "@discel/client",
-  "version": "0oo",
+  "version": "0.0.0",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
   "homepage": "https://discel.com",
@@ -53,7 +53,7 @@
     "minimatch": "5.0.1",
     "ms": "2.1.2",
     "node-fetch": "2.6.7",
-    "querystring": "",
+    "@discel/query-string": "workspace",
     "sleep-promise": "8.0.1",
     "tar-fs": "1.16.3"
   }
